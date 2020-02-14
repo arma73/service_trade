@@ -1,0 +1,84 @@
+{
+  "name": "move-app",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Arma73/Move-App.git"
+  },
+  "keywords": [
+    "next"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "precommit": "lint-staged",
+    "lint": "eslint --debug **/*.{js,jsx}",
+    "lint:write": "eslint --debug **/*.{js,jsx} --fix",
+    "prettier": "prettier --write **/*.{js,jsx}"
+  },
+  "dependencies": {
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "next": "9.2.0",
+    "next-routes": "^1.4.2",
+    "normalizr": "^3.5.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-source-maps": "^0.0.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "next-compose-plugins": "^2.2.0",
+    "next-fonts": "^1.0.3",
+    "next-optimized-images": "^2.5.4",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.18.2",
+    "webpack-filter-warnings-plugin": "^1.2.1"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ],
+    "production": [
+      "iOS >= 11",
+      "ChromeAndroid >= 63",
+      "Chrome >= 56",
+      "Edge >= 14",
+      "Firefox >= 57",
+      "Safari >= 11"
+    ]
+  },
+  "engines": {
+    "node": "10.15.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ]
+  }
+}
