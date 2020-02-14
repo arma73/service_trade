@@ -1,11 +1,14 @@
 import Head from "next/head";
 
+//Components
+import Layout from "components/layout/layout";
+
 const Home = () => (
-	<main>
+	<Layout>
 		<Head>
 			<title>Home</title>
 		</Head>
-	</main>
+	</Layout>
 );
 
 export default Home;
