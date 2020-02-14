@@ -1,0 +1,6 @@
+/.next/**
+/public/**
+/.git
+/.vscode
+/dist
+node_modules
