@@ -17,7 +17,7 @@
         "arrow-parens": [2, "as-needed"],
         "no-return-assign": 0,
         "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-        "capitalized-comments": [2, "always"],
+        "capitalized-comments": 0,
         "comma-spacing": [
             2,
             {
@@ -88,7 +88,7 @@
         "react/prop-types": [
             1,
             {
-                "ignore": ["children"]
+                "ignore": ["children", "className"]
             }
         ],
         "react/require-default-props": [0],
@@ -116,7 +116,7 @@
                 "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("
             }
         ],
-        "newline-after-var": [2, "always"],
+        "newline-after-var": 0,
         "no-tabs": [
             2,
             {

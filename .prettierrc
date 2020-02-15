@@ -126,7 +126,7 @@
 				},
 				"printWidth": {
 					"description": "The line length where Prettier will try wrap.",
-					"default": 80,
+					"default": 120,
 					"type": "integer"
 				},
 				"proseWrap": {
@@ -254,5 +254,5 @@
 		{
 			"type": "string"
 		}
-    ]
+	]
 }
