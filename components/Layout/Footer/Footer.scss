@@ -1,0 +1,183 @@
+@import "Theme/variables";
+@import "Theme/media";
+
+.Footer {
+	.Logo {
+		margin-bottom: 29px;
+	}
+
+	.copyright {
+		color: $grey-600;
+	}
+
+	h5 {
+		color: $orange-400;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1;
+		margin: 18px 0 30px;
+	}
+
+	.flex-list {
+		display: flex;
+	}
+
+	ul:not(.SocialList) li {
+		font-weight: 500;
+
+		a:hover {
+			color: $orange-400;
+		}
+
+		& + li {
+			margin-top: 10px;
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		.col-md-1 {
+			display: none;
+		}
+	}
+
+	&_access-private {
+		padding-top: 45px;
+		padding-bottom: 34px;
+		color: $grey-400;
+		background-color: $grey-800;
+
+		.list-item {
+			flex: 1 0 25%;
+
+			@include media-breakpoint-down(md) {
+				flex: 1 0 33%;
+				margin-bottom: 15px;
+			}
+
+			@include media-breakpoint-down(sm) {
+				flex: 1 0 50%;
+			}
+		}
+
+		.SocialList {
+			display: flex;
+			justify-content: flex-end;
+
+			@include media-breakpoint-down(md) {
+				margin-top: 15px;
+			}
+
+			.navigation-item:not(:first-child) {
+				margin-left: 16px;
+			}
+
+			.fab {
+				font-size: 18px;
+			}
+		}
+
+		.copyright {
+			margin: 0;
+
+			@include media-breakpoint-down(md) {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&_access-public {
+		margin-top: 112px;
+		padding: 78px 0 60px;
+		background-color: #ffffff;
+
+		.SocialList {
+			margin-top: 25px;
+			margin-bottom: 30px;
+
+			a {
+				line-height: 40px;
+				height: 40px;
+				width: 40px;
+				display: inline-block;
+				background-color: $grey-200;
+				color: $grey-700;
+				border-radius: 50%;
+				font-size: 16px;
+
+				&:hover {
+					color: white;
+					background-color: $orange-400;
+				}
+			}
+
+			li + li {
+				margin-left: 16px;
+			}
+		}
+
+		.flex-list {
+			justify-content: flex-start;
+			padding-left: 11px;
+
+			h5 {
+				margin-top: 7px;
+			}
+
+			.list-item {
+				& + .list-item {
+					margin-left: 120px;
+					@include media-breakpoint-down(lg) {
+						margin-left: 60px;
+					}
+				}
+
+				@include media-breakpoint-only(md) {
+					&:last-child {
+						margin-top: 20px;
+					}
+				}
+
+				@include media-breakpoint-down(xs) {
+					margin-top: 15px;
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+				display: block;
+				.list-item + .list-item {
+					margin-left: 0;
+				}
+
+				.list-item {
+					display: inline-block;
+					width: 45%;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+				.list-item {
+					width: 33.3333%;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				.list-item {
+					width: 50%;
+				}
+			}
+
+			@media (max-width: 400px) {
+				.list-item {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.SocialList {
+	li {
+		text-align: center;
+	}
+}
