@@ -1,0 +1,26 @@
+@import "../../theme/variables.scss";
+
+.Homepage {
+	.Header {
+		position: relative;
+		z-index: 1;
+	}
+
+	.Footer {
+		margin-top: 0;
+	}
+
+	.Layout {
+		background-image: none;
+	}
+
+	.container {
+		max-width: 1320px;
+	}
+
+	.Footer_access-public {
+		.container {
+			max-width: 1160px;
+		}
+	}
+}

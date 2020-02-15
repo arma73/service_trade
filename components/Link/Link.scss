@@ -1,0 +1,12 @@
+@import "Theme/mixins";
+@import "Theme/variables";
+
+.Link {
+	@include transition-animation;
+
+	&_hover-orange {
+		&:hover {
+			color: $orange-400;
+		}
+	}
+}
