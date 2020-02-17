@@ -1,6 +1,4 @@
 const webpack = require("webpack");
-const path = require("path");
-const aliasJSON = require("./alias");
 const { parsed: localEnv } = require("dotenv").config();
 const withSourceMaps = require("@zeit/next-source-maps");
 const withOptimizedImages = require("next-optimized-images");
@@ -44,13 +42,6 @@ const plugins = [
 	]
 ];
 
-const MakeAlias = ({ alias }) => {
-	const CopyAlias = { ...alias };
-
-	Object.keys(aliasJSON).forEach(item => (CopyAlias[item] = path.resolve(__dirname, ...aliasJSON[item])));
-	return CopyAlias;
-};
-
 module.exports = withPlugins([...plugins], {
 	webpack: config => {
 		const conf = config;
@@ -65,8 +56,6 @@ module.exports = withPlugins([...plugins], {
 				exclude: /mini-css-extract-plugin[^]*Conflicting order between:/
 			})
 		);
-
-		conf.resolve.alias = MakeAlias(conf.resolve);
 
 		return conf;
 	}

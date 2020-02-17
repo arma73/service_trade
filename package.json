@@ -1,5 +1,5 @@
 {
-  "name": "move-app",
+  "name": "buyenjoy",
   "version": "0.1.0",
   "private": true,
   "repository": {
@@ -19,7 +19,8 @@
     "prettier": "prettier --write **/*.{js,jsx}"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "bootstrap": "^4.4.1",
+    "class-names": "^1.0.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "imagemin-mozjpeg": "^8.0.0",
