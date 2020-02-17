@@ -1,18 +1,18 @@
 import { string } from "prop-types";
-import classNames from "class-names";
+import class_names from "class-names";
 
 import "./Header.scss";
 
-const Header = ({ children, className }) => (
-	<header className={classNames("Header", className)}>{children}</header>
+const Header = ({ children, classpropname }) => (
+	<header className={class_names("Header", classpropname)}>{children}</header>
 );
 
 Header.propTypes = {
-	className: string
+	classpropname: string
 };
 
 Header.defaultProps = {
-	className: ""
+	classpropname: ""
 };
 
 export default Header;

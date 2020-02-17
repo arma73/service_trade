@@ -1,0 +1,47 @@
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+
+ul {
+	list-style-type: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+button,
+a {
+	transition: 0.3s ease all;
+	font-family: inherit;
+	font-weight: inherit;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.inline-list li {
+	display: inline-block;
+}
+
+img {
+	max-width: 100%;
+}

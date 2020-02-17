@@ -1,21 +1,22 @@
-import * as PropTypes from "prop-types";
+import { string, bool } from "prop-types";
 import NextLink from "next/link";
-import classNames from "class-names";
+import class_names from "class-names";
 
 import "./Link.scss";
 
-const Link = ({ className, href, children, prefetch, as, ...rest }) => (
+const Link = ({ classpropname, href, children, prefetch, as, ...rest }) => (
 	<NextLink href={href} as={as} prefetch={prefetch}>
-		<a className={classNames("Link", className)} {...rest}>
+		<a className={class_names("Link", classpropname)} {...rest}>
 			{children}
 		</a>
 	</NextLink>
 );
 
 Link.propTypes = {
-	as: PropTypes.string,
-	href: PropTypes.string.isRequired,
-	prefetch: PropTypes.bool
+	as: string,
+	classpropname: string,
+	href: string.isRequired,
+	prefetch: bool
 };
 
 Link.defaultProps = {

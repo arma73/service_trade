@@ -1,8 +1,9 @@
-$logo-width: 150px;
+$logo-width: 35px;
 
 .Logo {
 	width: $logo-width;
-
+	display: flex;
+	align-items: center;
 	img {
 		width: $logo-width;
 	}

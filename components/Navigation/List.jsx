@@ -1,9 +1,9 @@
 import { string } from "prop-types";
 
-const NavigationList = ({ children, className }) => <ul className={className}>{children}</ul>;
+const NavigationList = ({ children, classpropname }) => <ul className={classpropname}>{children}</ul>;
 
 NavigationList.propTypes = {
-	className: string
+	classpropname: string
 };
 
 export default NavigationList;

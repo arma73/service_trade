@@ -1,9 +1,9 @@
 import { string } from "prop-types";
 import Link from "components/Link";
 
-const NavigationItem = ({ children, href, as, className }) => (
+const NavigationItem = ({ children, href, as, classpropname }) => (
 	<li className="navigation-item">
-		<Link href={href} as={as} className={className}>
+		<Link href={href} as={as} classpropname={classpropname}>
 			{children}
 		</Link>
 	</li>
@@ -11,6 +11,7 @@ const NavigationItem = ({ children, href, as, className }) => (
 
 NavigationItem.propTypes = {
 	as: string,
+	classpropname: string,
 	href: string.isRequired
 };
 

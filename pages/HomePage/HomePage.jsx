@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./HomePage.scss";
 
 //Components
-import PublicLayout from "Layout";
+import { PublicLayout } from "components/Layout";
 import NProgress from "components/NProgress";
 
 const Home = () => (
@@ -14,7 +14,7 @@ const Home = () => (
 		</Head>
 		<NProgress />
 		<PublicLayout>
-			<div>PublicLayout</div>
+			<div>PublicLayout &gt; Main</div>
 		</PublicLayout>
 	</div>
 );

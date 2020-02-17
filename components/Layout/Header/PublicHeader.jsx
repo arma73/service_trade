@@ -3,7 +3,7 @@ import { PublicNavigationContainer } from "containers/Navigation";
 import Header from "components/Layout/Header";
 
 const PublicHeader = () => (
-	<Header className="Header_access-public">
+	<Header classpropname="Header_access-public">
 		<Logo type="white" />
 		<PublicNavigationContainer />
 	</Header>

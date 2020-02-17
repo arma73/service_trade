@@ -1,18 +1,18 @@
 import { string } from "prop-types";
-import classNames from "class-names";
+import class_names from "class-names";
 
 import "./Footer.scss";
 
-const Footer = ({ children, className }) => (
-	<footer classNames={classNames("Footer", className)}>{children}</footer>
+const Footer = ({ children, classpropname }) => (
+	<footer className={class_names("Footer", classpropname)}>{children}</footer>
 );
 
 Footer.propTypes = {
-	className: string
+	classpropname: string
 };
 
 Footer.defaultProps = {
-	className: ""
+	classpropname: ""
 };
 
 export default Footer;

@@ -1,12 +1,13 @@
-import * as PropTypes from "prop-types";
-import classNames from "class-names";
+import { string } from "prop-types";
+import class_names from "class-names";
 
-const FaIcon = ({ icon, className, ...rest }) => (
-	<i className={classNames("fab", icon, className)} {...rest} />
+const FaIcon = ({ icon, classpropname, ...rest }) => (
+	<i className={class_names("fab", icon, classpropname)} {...rest} />
 );
 
 FaIcon.propTypes = {
-	icon: PropTypes.string.isRequired
+	classpropname: string,
+	icon: string.isRequired
 };
 
 export default FaIcon;

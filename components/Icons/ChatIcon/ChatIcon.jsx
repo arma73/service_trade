@@ -4,7 +4,7 @@ import "./ChatIcon.scss";
 
 const ChatIcon = () => (
 	<div className="ChatIcon">
-		<Link href="/" className="icon" />
+		<Link href="/" classpropname="icon" />
 	</div>
 );
 

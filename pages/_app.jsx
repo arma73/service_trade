@@ -10,20 +10,20 @@ import "utils/route-watcher";
 import "./styles.scss";
 
 class MyApp extends App {
-	static async getInitialProps({ Component, ctx }) {
-		let pageProps = {};
-		if (ctx.isServer) {
-			const { sizesFallback } = ctx.req;
-			pageProps.sizesFallback = sizesFallback;
-		}
-
-		if (Component.getInitialProps) {
-			const componentProps = await Component.getInitialProps(ctx);
-			pageProps = { ...pageProps, ...componentProps };
-		}
-
-		return { pageProps };
-	}
+	/*
+	 * static async getInitialProps({ Component, ctx }) {
+	 * let pageProps = {};
+	 * if (ctx.isServer) {
+	 * const { sizesFallback } = ctx.req;
+	 * pageProps.sizesFallback = sizesFallback;
+	 * }
+	 * if (Component.getInitialProps) {
+	 * const componentProps = await Component.getInitialProps(ctx);
+	 * pageProps = { ...pageProps, ...componentProps };
+	 * }
+	 * return { pageProps };
+	 * }
+	 */
 
 	createUrl = router => {
 		const { pathname, asPath, query } = router;
