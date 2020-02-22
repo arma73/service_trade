@@ -121,7 +121,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint",
-      "jest"
+      "jest --passWithNoTests"
     ]
   }
 }
