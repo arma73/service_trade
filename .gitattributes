@@ -1,4 +1,5 @@
 * linguist-vendored
+* linguist-language=JavaScript
 *.js linguist-vendored=false
 *.css             text
 *.js              text
