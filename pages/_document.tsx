@@ -1,9 +1,8 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
-import sprite from "svg-sprite-loader/runtime/sprite.build";
 
 class MyDocument extends Document {
-	render() {
+	public render() {
 		return (
 			<html lang="en">
 				<Head>
@@ -15,8 +14,6 @@ class MyDocument extends Document {
 					/>
 				</Head>
 				<body>
-					{/*eslint-disable-next-line react/no-danger*/}
-					<div dangerouslySetInnerHTML={{ __html: sprite.stringify() }} />
 					<Main />
 					<NextScript />
 				</body>

@@ -1,15 +1,16 @@
 import React from "react";
-import App from "next/app";
+import App, { Container } from "next/app";
 import { Provider } from "react-redux";
-import withRedux from "next-redux-wrapper";
-import withReduxSaga from "next-redux-saga";
+import withRedux, { StoreProps } from "utils/redux/withRedux";
+import { ActionWithPayload } from "utils/redux/types";
+import withReduxSaga from "utils/redux/withReduxSaga";
 import { SizesProvider } from "react-sizes";
-import Store from "store";
+import initStore, { Store } from "store";
 import "utils/route-watcher";
 
 import "./styles.scss";
 
-class MyApp extends App {
+class MyApp extends App<StoreProps<Store>> {
 	/*
 	 * static async getInitialProps({ Component, ctx }) {
 	 * let pageProps = {};
@@ -25,7 +26,7 @@ class MyApp extends App {
 	 * }
 	 */
 
-	createUrl = router => {
+	createUrl = (router: any) => {
 		const { pathname, asPath, query } = router;
 		return {
 			get query() {
@@ -40,15 +41,15 @@ class MyApp extends App {
 			back: () => {
 				router.back();
 			},
-			push: (url, as) => router.push(url, as),
-			pushTo: (href, as) => {
+			push: (url: any, as: any) => router.push(url, as),
+			pushTo: (href: any, as: any) => {
 				const pushRoute = as ? href : null;
 				const pushUrl = as || href;
 
 				return router.push(pushRoute, pushUrl);
 			},
-			replace: (url, as) => router.replace(url, as),
-			replaceTo: (href, as) => {
+			replace: (url: any, as: any) => router.replace(url, as),
+			replaceTo: (href: any, as: any) => {
 				const replaceRoute = as ? href : null;
 				const replaceUrl = as || href;
 
@@ -61,13 +62,17 @@ class MyApp extends App {
 		const { Component, pageProps, router, store } = this.props;
 		const url = this.createUrl(router);
 		return (
-			<Provider store={store}>
-				<SizesProvider config={pageProps.sizesFallback}>
-					<Component {...pageProps} url={url} />
-				</SizesProvider>
-			</Provider>
+			<Container>
+				<Provider store={store}>
+					<SizesProvider config={pageProps.sizesFallback}>
+						<Component {...pageProps} url={url} />
+					</SizesProvider>
+				</Provider>
+			</Container>
 		);
 	}
 }
 
-export default withRedux(Store)(withReduxSaga(MyApp));
+export default withRedux<ActionWithPayload, Store>(initStore)(
+	withReduxSaga<ActionWithPayload, Store>(MyApp)
+);

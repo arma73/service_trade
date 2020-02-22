@@ -7,7 +7,7 @@ import "./HomePage.scss";
 import { PublicLayout } from "components/Layout";
 import NProgress from "components/NProgress";
 
-const Home = () => (
+const Home: React.FC = () => (
 	<div className="Homepage">
 		<Head>
 			<title>Home</title>
