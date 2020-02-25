@@ -8,10 +8,10 @@ const SiteNavigation = ({ children, handleToggleClick, isMobile, isOpen }) => {
 	});
 
 	return (
-		<nav className={navWrapClassName}>
+		<div className={navWrapClassName}>
 			{isMobile && <Toggle handleClick={handleToggleClick} />}
 			{children}
-		</nav>
+		</div>
 	);
 };
 

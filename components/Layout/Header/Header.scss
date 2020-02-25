@@ -5,13 +5,42 @@
 .Header {
 	.Navigation {
 		display: flex;
-		line-height: 40px;
-		transition: 0.3s ease all;
-
+		align-items: center;
 		.navigation-item {
 			margin-left: 32px;
-			color:black
 		}
+
+		.Navigation_list{
+			display: flex;
+			line-height: 40px;
+			transition: 0.3s ease all;
+			&.stripped{
+				flex: 1;
+				justify-content: center;
+				.navigation-item {
+
+					.Link{
+						line-height: 20px;
+						margin-left: 105px;
+						color: $orange-100;
+						border: 1px solid $orange-100;
+						padding: 7px;
+						transition: 0.3s ease all;
+						border-radius: 5px;
+						&:hover{
+							background-color: $orange-100;
+							color: $colorful_orange;
+							border-radius: 2px;
+						}
+					}
+					
+				}
+			}
+			.authorization_buttons{
+
+			}
+		}
+		
 
 		@include media-breakpoint-down(sm) {
 			opacity: 0;
@@ -70,7 +99,7 @@
 
 	.nav-wrap {
 		z-index: 9999;
-
+		width: 100%;
 		&.open {
 			.Navigation {
 				opacity: 1;
@@ -146,6 +175,7 @@
 		display: flex;
 		justify-content: space-between;
 		color: #ffffff;
+		background-color: $colorful_orange;
 
 		.mobile-toggle {
 			fill: #ffffff;
