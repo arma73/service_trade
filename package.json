@@ -19,8 +19,8 @@
     "prettier": "prettier --write **/*.{js,jsx}"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "class-names": "^1.0.0",
+    "@material-ui/core": "^4.9.4",
+    "clsx": "^1.1.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "imagemin-mozjpeg": "^8.0.0",
@@ -42,6 +42,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.1.3",
+    "swr": "^0.1.18",
     "universal-cookie-express": "^4.0.3",
     "webp-loader": "^0.6.0"
   },
