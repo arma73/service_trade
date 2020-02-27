@@ -1,10 +1,10 @@
 import { string } from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 
 import "./Header.scss";
 
 const Header = ({ children, classpropname }) => (
-	<header className={class_names("Header", classpropname)}>{children}</header>
+	<section className={clsx("Header", classpropname)}>{children}</section>
 );
 
 Header.propTypes = {

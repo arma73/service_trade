@@ -1,5 +1,5 @@
 import { bool, func } from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 import { NavigationItem, NavigationList, NavigationGroup } from "components/Navigation";
 import SiteNavigation from "components/Layout/Header/SiteNavigation";
 import { Button } from "components/Form";
@@ -7,11 +7,11 @@ import withViewportDetection from "containers/Hocs/WithViewportDetection";
 import withToggle from "containers/Hocs/WithToggle";
 
 const PublicNavigationContainer = ({ handleToggleClick, isMobile, isOpen }) => {
-	const navClassName = class_names("Navigation", {
+	const navClassName = clsx("Navigation", {
 		mobile: isMobile
 	});
 
-	const listClassName = class_names("Navigation_list", {
+	const listClassName = clsx("Navigation_list", {
 		mobile: isMobile
 	});
 

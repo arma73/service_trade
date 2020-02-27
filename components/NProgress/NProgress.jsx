@@ -12,11 +12,11 @@ Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 const NProgressUI = () => (
-	<div>
+	<>
 		<Head>
 			<link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
 		</Head>
-	</div>
+	</>
 );
 
 export default NProgressUI;

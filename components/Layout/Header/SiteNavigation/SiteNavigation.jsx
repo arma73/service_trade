@@ -1,9 +1,9 @@
 import { bool, func } from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 import Toggle from "./Toggle";
 
 const SiteNavigation = ({ children, handleToggleClick, isMobile, isOpen }) => {
-	const navWrapClassName = class_names("nav-wrap", {
+	const navWrapClassName = clsx("nav-wrap", {
 		open: isOpen
 	});
 

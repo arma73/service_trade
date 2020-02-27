@@ -4,12 +4,23 @@ import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
 import { SizesProvider } from "react-sizes";
+import Head from "next/head";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "theme/Material-UI";
 import Store from "store";
 import "utils/route-watcher";
 
 import "./styles.scss";
 
 class MyApp extends App {
+	componentDidMount() {
+		//Remove the server-side injected CSS.
+		const jssStyles = document.querySelector("#jss-server-side");
+		if (jssStyles) {
+			jssStyles.parentElement.removeChild(jssStyles);
+		}
+	}
 	/*
 	 * static async getInitialProps({ Component, ctx }) {
 	 * let pageProps = {};
@@ -61,11 +72,23 @@ class MyApp extends App {
 		const { Component, pageProps, router, store } = this.props;
 		const url = this.createUrl(router);
 		return (
-			<Provider store={store}>
-				<SizesProvider config={pageProps.sizesFallback}>
-					<Component {...pageProps} url={url} />
-				</SizesProvider>
-			</Provider>
+			<>
+				<Head>
+					<title>BuyEnjoy</title>
+					<meta
+						name="viewport"
+						content="minimum-scale=1, initial-scale=1, width=device-width"
+					/>
+				</Head>
+				<Provider store={store}>
+					<SizesProvider config={pageProps.sizesFallback}>
+						<ThemeProvider theme={theme}>
+							<CssBaseline />
+							<Component {...pageProps} url={url} />
+						</ThemeProvider>
+					</SizesProvider>
+				</Provider>
+			</>
 		);
 	}
 }

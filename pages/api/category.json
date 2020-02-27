@@ -1,0 +1,37 @@
+{
+	"MainText": "All Categories",
+	"Sections": [
+		{
+			"mainSection": "Smart Watch",
+			"subsection": [
+				{
+					"mainSection": "Sport",
+					"sectionKinds": ["Apple", "Microsoft", "Nike"],
+					"id": "sport_1"
+				},
+				{
+					"mainSection": "Business",
+					"sectionKinds": ["Apple", "Samsung"],
+					"id": "business_1"
+				}
+			],
+			"id": "smart_watch_1"
+		},
+		{
+			"mainSection": "TV",
+			"subsection": [
+				{
+					"mainSection": "Smart",
+					"sectionKinds": ["Hisence", "Samsung"],
+					"id": "smart_1"
+				},
+				{
+					"mainSection": "Android",
+					"sectionKinds": ["Dell", "Fujitsu"],
+					"id": "android_1"
+				}
+			],
+			"id": "tv_1"
+		}
+	]
+}

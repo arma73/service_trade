@@ -1,13 +1,13 @@
 import React from "react";
 import * as PropTypes from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 
 import "./Button.scss";
 
 const Button = ({ children, type, classpropname, color, size, ...restProps }) => (
 	//eslint-disable-next-line react/button-has-type
 	<button
-		className={class_names("Button", color, size, {
+		className={clsx("Button", color, size, {
 			[classpropname]: classpropname
 		})}
 		type={type}

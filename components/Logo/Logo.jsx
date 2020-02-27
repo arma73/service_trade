@@ -1,5 +1,5 @@
 import * as PropTypes from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 import Link from "next/link";
 /*
  * import DefaultLogo from "./assets/logo-default.svg";
@@ -18,7 +18,7 @@ const LogoImage = {
 };
 
 const Logo = ({ type }) => (
-	<div className={class_names("Logo", type)}>
+	<div className={clsx("Logo", type)}>
 		<Link href="/">
 			<a>
 				<img src={LogoImage[type]} alt="" />

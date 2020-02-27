@@ -1,12 +1,12 @@
 import { string, bool } from "prop-types";
 import NextLink from "next/link";
-import class_names from "class-names";
+import clsx from "clsx";
 
 import "./Link.scss";
 
 const Link = ({ classpropname, href, children, prefetch, as, ...rest }) => (
 	<NextLink href={href} as={as} prefetch={prefetch}>
-		<a className={class_names("Link", classpropname)} {...rest}>
+		<a className={clsx("Link", classpropname)} {...rest}>
 			{children}
 		</a>
 	</NextLink>

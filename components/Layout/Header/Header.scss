@@ -16,6 +16,7 @@
 			transition: 0.3s ease all;
 			&.stripped{
 				flex: 1;
+				flex-wrap: wrap;
 				justify-content: center;
 				.navigation-item {
 
@@ -36,12 +37,9 @@
 					
 				}
 			}
-			.authorization_buttons{
-
-			}
 		}
 		
-
+		/*
 		@include media-breakpoint-down(sm) {
 			opacity: 0;
 			visibility: hidden;
@@ -65,7 +63,7 @@
 				top: 0;
 			}
 		}
-
+		*/
 		.Button {
 			padding: 11px 14px;
 		}
@@ -131,7 +129,7 @@
 
 		.nav-wrap {
 			padding-left: 25px;
-
+			/*
 			@include media-breakpoint-down(sm) {
 				display: flex;
 				justify-content: flex-end;
@@ -150,6 +148,7 @@
 					}
 				}
 			}
+			*/
 		}
 
 		.mobile-toggle {
@@ -161,13 +160,14 @@
 				color: $orange-400;
 			}
 		}
-
+		/*
 		@include media-breakpoint-down(sm) {
 			.Navigation {
 				display: flex;
 				flex-direction: column;
 			}
 		}
+		*/
 	}
 
 	&_access-public {
@@ -181,10 +181,32 @@
 			fill: #ffffff;
 		}
 
+		// @include media-breakpoint-down(sm) {
+		// 	.Navigation {
+		// 		display: block;
+		// 	}
+		// }
+	}
+
+}
+.Concept{
+	&_access-public {
+		border-top: 3px solid $colorful_purple_dark;
+		padding: 13px 16px;
+		display: flex;
+		justify-content: space-between;
+		color: #ffffff;
+		background-color: $colorful_orange;
+
+		.mobile-toggle {
+			fill: #ffffff;
+		}
+		/*
 		@include media-breakpoint-down(sm) {
 			.Navigation {
 				display: block;
 			}
 		}
+		*/
 	}
 }
