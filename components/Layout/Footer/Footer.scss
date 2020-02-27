@@ -34,11 +34,11 @@
 		}
 	}
 
-	@include media-breakpoint-down(sm) {
-		.col-md-1 {
-			display: none;
-		}
-	}
+	// @include media-breakpoint-down(sm) {
+	// 	.col-md-1 {
+	// 		display: none;
+	// 	}
+	// }
 
 	&_access-private {
 		padding-top: 45px;
@@ -49,23 +49,23 @@
 		.list-item {
 			flex: 1 0 25%;
 
-			@include media-breakpoint-down(md) {
-				flex: 1 0 33%;
-				margin-bottom: 15px;
-			}
+			// @include media-breakpoint-down(md) {
+			// 	flex: 1 0 33%;
+			// 	margin-bottom: 15px;
+			// }
 
-			@include media-breakpoint-down(sm) {
-				flex: 1 0 50%;
-			}
+			// @include media-breakpoint-down(sm) {
+			// 	flex: 1 0 50%;
+			// }
 		}
 
 		.SocialList {
 			display: flex;
 			justify-content: flex-end;
 
-			@include media-breakpoint-down(md) {
-				margin-top: 15px;
-			}
+			// @include media-breakpoint-down(md) {
+			// 	margin-top: 15px;
+			// }
 
 			.navigation-item:not(:first-child) {
 				margin-left: 16px;
@@ -79,9 +79,9 @@
 		.copyright {
 			margin: 0;
 
-			@include media-breakpoint-down(md) {
-				margin-top: 10px;
-			}
+			// @include media-breakpoint-down(md) {
+			// 	margin-top: 10px;
+			// }
 		}
 	}
 
@@ -126,46 +126,46 @@
 			.list-item {
 				& + .list-item {
 					margin-left: 120px;
-					@include media-breakpoint-down(lg) {
-						margin-left: 60px;
-					}
+					// @include media-breakpoint-down(lg) {
+					// 	margin-left: 60px;
+					// }
 				}
 
-				@include media-breakpoint-only(md) {
-					&:last-child {
-						margin-top: 20px;
-					}
-				}
+				// @include media-breakpoint-only(md) {
+				// 	&:last-child {
+				// 		margin-top: 20px;
+				// 	}
+				// }
 
-				@include media-breakpoint-down(xs) {
-					margin-top: 15px;
-				}
+				// @include media-breakpoint-down(xs) {
+				// 	margin-top: 15px;
+				// }
 			}
 
-			@include media-breakpoint-down(md) {
-				display: block;
-				.list-item + .list-item {
-					margin-left: 0;
-				}
+			// @include media-breakpoint-down(md) {
+			// 	display: block;
+			// 	.list-item + .list-item {
+			// 		margin-left: 0;
+			// 	}
 
-				.list-item {
-					display: inline-block;
-					width: 45%;
-				}
-			}
+			// 	.list-item {
+			// 		display: inline-block;
+			// 		width: 45%;
+			// 	}
+			// }
 
-			@include media-breakpoint-down(sm) {
-				width: 100%;
-				.list-item {
-					width: 33.3333%;
-				}
-			}
+			// @include media-breakpoint-down(sm) {
+			// 	width: 100%;
+			// 	.list-item {
+			// 		width: 33.3333%;
+			// 	}
+			// }
 
-			@include media-breakpoint-down(xs) {
-				.list-item {
-					width: 50%;
-				}
-			}
+			// @include media-breakpoint-down(xs) {
+			// 	.list-item {
+			// 		width: 50%;
+			// 	}
+			// }
 
 			@media (max-width: 400px) {
 				.list-item {

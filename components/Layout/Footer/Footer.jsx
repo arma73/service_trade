@@ -1,10 +1,10 @@
 import { string } from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 
 import "./Footer.scss";
 
 const Footer = ({ children, classpropname }) => (
-	<footer className={class_names("Footer", classpropname)}>{children}</footer>
+	<footer className={clsx("Footer", classpropname)}>{children}</footer>
 );
 
 Footer.propTypes = {

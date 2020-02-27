@@ -16,10 +16,10 @@ export default (req, res) => {
 	const path = `pages${pathname}.json`;
 	fs.access(path, fs.F_OK, err => {
 		if (err) return handleError(err, res);
-		fs.readFile(path, (err, data) => {
+		return fs.readFile(path, (err, data) => {
 			if (err) return handleError(err, res);
 			res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-			res.end(data.toString());
+			return res.end(data.toString());
 		});
 	});
 };

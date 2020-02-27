@@ -1,8 +1,8 @@
 import { string } from "prop-types";
-import class_names from "class-names";
+import clsx from "clsx";
 
 const FaIcon = ({ icon, classpropname, ...rest }) => (
-	<i className={class_names("fab", icon, classpropname)} {...rest} />
+	<i className={clsx("fab", icon, classpropname)} {...rest} />
 );
 
 FaIcon.propTypes = {
