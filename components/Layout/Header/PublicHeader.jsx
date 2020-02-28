@@ -4,7 +4,7 @@ import { PublicConcept } from "components/Layout/Header/Concept";
 import Header from "components/Layout/Header";
 import { Category } from "components/Category";
 import { Search } from "components/Search";
-import { Cart } from "components/Cart";
+import { Basket } from "components/Basket";
 
 const PublicHeader = () => (
 	<header>
@@ -15,7 +15,7 @@ const PublicHeader = () => (
 		<PublicConcept classpropname="Concept_access-public">
 			<Category />
 			<Search />
-			<Cart />
+			<Basket />
 		</PublicConcept>
 	</header>
 );

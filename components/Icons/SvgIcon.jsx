@@ -17,6 +17,7 @@ import Search from "./icons/Search";
 import NavLeft from "./icons/NavLeft";
 import NavRight from "./icons/NavRight";
 import Star from "./icons/Star";
+import Basket from "./icons/Basket";
 
 import "./SvgIcon.scss";
 
@@ -85,6 +86,10 @@ const SvgIcon = ({ icon, size, color, className, ...rest }) => {
 		}
 		case "search": {
 			IconComponent = Search;
+			break;
+		}
+		case "basket": {
+			IconComponent = Basket;
 			break;
 		}
 		default:
