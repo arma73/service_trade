@@ -1,0 +1,121 @@
+@import "../../theme/variables";
+@import "../../theme/mixins";
+
+.Select {
+	position: relative;
+
+	.options {
+		position: absolute;
+		top: 80%;
+		opacity: 0;
+		visibility: hidden;
+		right: 1px;
+		left: 1px;
+		transition: 0.2s ease all;
+		overflow-y: auto;
+		max-height: 300px;
+		background: #ffffff;
+		box-shadow: 0 6px 24px rgba(107, 108, 111, 0.16), 0 0 2px rgba(107, 108, 111, 0.24);
+		border-radius: 4px;
+		z-index: 999;
+		.scrollArea > *{
+			overflow: hidden !important;
+		}
+	}
+
+	&.opened {
+		.options {
+			display: block;
+			top: 110%;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.selected {
+			border-color: $orange-400;
+			background-color: #ffff;
+		}
+
+		svg.SvgIcon {
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+
+	.selected,
+	.SelectOption {
+        height: 100%;
+		border-radius: 4px;
+		outline: none;
+		color: $grey-700;
+		font-weight: 500;
+		position: relative;
+		background-color: $grey-100;
+		cursor: pointer;
+		border: 2px solid transparent;
+		transition: 0.2s ease all;
+
+		.SvgIcon {
+			position: absolute;
+			width: 10px;
+			height: 5px;
+			right: 20px;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			transition: 0.2s ease all;
+		}
+	}
+
+	&.invalid {
+		.selected {
+			border-color: transparent;
+			@include invalid;
+		}
+	}
+
+	&.disabled {
+		.selected {
+			border-color: transparent;
+			@include disabled;
+		}
+	}
+
+	.SelectOption {
+		background-color: #fff;
+		border: none;
+
+		&:hover {
+			background-color: $grey-100;
+		}
+	}
+
+	&.lg {
+		.selected,
+		.SelectOption {
+			font-size: 16px;
+			line-height: 16px;
+			padding: 18px 40px 18px 20px;
+		}
+	}
+
+	&.md {
+		.selected,
+		.SelectOption {
+			font-size: 1em;
+			line-height: 1em;
+			padding: 15px 16px;
+		}
+	}
+
+	&.sm {
+		.selected,
+		.SelectOption {
+			font-size: 1em;
+			line-height: 1em;
+			padding: 11px 12px;
+		}
+	}
+
+	.SelectOption {
+		border-radius: 4px;
+	}
+}

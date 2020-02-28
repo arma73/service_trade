@@ -1,0 +1,57 @@
+@import "../../theme/variables";
+
+.FormGroup {
+	display: flex;
+	flex-direction: column;
+
+	& + & {
+		margin-top: 2.28571em;
+
+		.Form_private & {
+			margin-top: 16px;
+		}
+	}
+
+	& + &_submit {
+		.Form_private & {
+			margin-top: 24px;
+		}
+	}
+
+	label {
+		line-height: 1;
+		font-size: 1.14285em;
+		margin-bottom: 0.85714em;
+		font-weight: 500;
+		color: $grey-700;
+
+		.Form_private & {
+			margin-bottom: 8px;
+			font-size: 14px;
+		}
+	}
+
+	.Checkbox {
+		label {
+			font-size: 1em;
+		}
+	}
+
+	&.inline {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&_submit {
+		.Form_private & {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		.Button + .Button {
+			.Form_private & {
+				margin-left: 12px;
+			}
+		}
+	}
+}

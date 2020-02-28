@@ -39,7 +39,7 @@
 		"react/jsx-uses-vars": 2,
 		"react/jsx-indent": [2, "tab"],
 		"react/require-default-props": [0],
-		"react/sort-prop-types": 2,
+		"react/sort-prop-types": 0,
 		"react/no-unused-prop-types": [
 			2,
 			{
