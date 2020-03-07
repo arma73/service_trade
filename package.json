@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "cross-env NODE_ENV=production node server",
     "precommit": "lint-staged",
     "lint": "eslint --debug **/*.{js,jsx}",

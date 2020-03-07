@@ -58,5 +58,11 @@ module.exports = withPlugins([...plugins], {
 		);
 
 		return conf;
+	},
+	exportTrailingSlash: true,
+	exportPathMap() {
+		return {
+			"/": { page: "/" }
+		};
 	}
 });
