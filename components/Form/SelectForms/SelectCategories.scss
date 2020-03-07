@@ -1,41 +1,18 @@
-@import "../../theme/variables";
-@import "../../theme/mixins";
+@import "../../../theme/variables";
+@import "../../../theme/mixins";
 
-.Select {
+.SelectCategories {
 	position: relative;
-
 	.options {
-		position: absolute;
-		top: 80%;
-		opacity: 0;
-		visibility: hidden;
-		right: 1px;
-		left: 1px;
-		transition: 0.2s ease all;
-		overflow-y: auto;
-		max-height: 300px;
-		background: #ffffff;
-		box-shadow: 0 6px 24px rgba(107, 108, 111, 0.16), 0 0 2px rgba(107, 108, 111, 0.24);
-		border-radius: 4px;
-		z-index: 999;
 		.scrollArea > *{
 			overflow: hidden !important;
+		}
+		&_List{
+			overflow-y: inherit;
 		}
 	}
 
 	&.opened {
-		.options {
-			display: block;
-			top: 110%;
-			opacity: 1;
-			visibility: visible;
-		}
-
-		.selected {
-			border-color: $orange-400;
-			background-color: #ffff;
-		}
-
 		svg.SvgIcon {
 			transform: translate(-50%, -50%) rotate(180deg);
 		}
@@ -53,12 +30,13 @@
 		cursor: pointer;
 		border: 2px solid transparent;
 		transition: 0.2s ease all;
-
+		
 		.SvgIcon {
 			position: absolute;
 			width: 10px;
 			height: 5px;
-			right: 20px;
+			right: 12px; 
+			fill: $grey-500;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			transition: 0.2s ease all;
@@ -76,15 +54,6 @@
 		.selected {
 			border-color: transparent;
 			@include disabled;
-		}
-	}
-
-	.SelectOption {
-		background-color: #fff;
-		border: none;
-
-		&:hover {
-			background-color: $grey-100;
 		}
 	}
 
@@ -114,8 +83,55 @@
 			padding: 11px 12px;
 		}
 	}
-
 	.SelectOption {
-		border-radius: 4px;
+		min-width: 100%;
+		background-color: #fff;
+		border: none;
+		&:hover {
+			background-color: $grey-100;
+			.SvgIcon{
+				transform: translate(-50%, -50%);
+			}
+		}
+		//hover elements
+		&_List{
+			background-color: #ffffff;
+			position: absolute;
+			top: 0;
+			transition: 0.2s ease all;
+			// opacity: 0;
+			left: 101%;
+			min-height: 100%;
+			min-width: 100%;
+			display: flex;
+			box-shadow: 0 6px 24px rgba(107, 108, 111, 0.16), 0 0 2px rgba(107, 108, 111, 0.24);
+			border-radius: 4px;
+			justify-content: space-around;
+			padding: 10px;
+			
+			&:hover {
+				background-color: $grey-100;
+			}
+			&_Block{
+				margin-right: 10px;
+				z-index: 1;
+				&_Subsec{
+					justify-content: flex-end;
+					padding: 5px;
+					margin-left: 10px;
+					li {
+						margin-bottom: 7px;
+						&:hover{
+							background-color: $grey-300;
+						}
+					}
+				}
+				&_Title{
+					justify-content: flex-start;
+					padding: 5px;
+					color: $grey-500;
+				}
+			}
+		}
 	}
 }

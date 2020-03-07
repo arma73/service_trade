@@ -1,0 +1,27 @@
+@import "../../theme/variables";
+
+#basket{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+	z-index: 1;
+    width: max-content;
+    height: 100%;
+    .SvgIcon{
+        width: 100%;
+        height: 100%;
+    }
+    &:hover .SvgIcon{
+        fill: $orange-400;
+    }
+    &:hover::after  {
+        background-color: $orange-400 !important;
+        border: 2px solid $orange-400 !important;
+    }
+    
+}
+.HoverShow_Element{
+    right: 5% !important;
+}

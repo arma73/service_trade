@@ -2,6 +2,10 @@
   "name": "buyenjoy",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "email": "arma.biz9805@gmail.com",
+    "name": "Arman Khilko"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:Arma73/BuyEnjoy"

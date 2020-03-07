@@ -35,6 +35,35 @@ const CategoriesMocks = () => ({
 				]
 			}
 		]
+	},
+	Categories: {
+		mainText: "Categories",
+		lists: [
+			{
+				id: 0,
+				label: "Categories"
+			},
+			{
+				id: 1,
+				label: "Web development"
+			},
+			{
+				id: 2,
+				label: "UX Design"
+			},
+			{
+				id: 3,
+				label: "UX Design"
+			},
+			{
+				id: 4,
+				label: "UX Design"
+			},
+			{
+				id: 5,
+				label: "UX Design"
+			}
+		]
 	}
 });
 

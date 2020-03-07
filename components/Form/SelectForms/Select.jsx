@@ -1,9 +1,7 @@
-/*eslint-disable max-lines */
-import { useState, useEffect } from "react";
 import * as PropTypes from "prop-types";
 import clsx from "clsx";
-import ScrollArea from "react-custom-scrollbars";
-import SvgIcon from "../Icons/SvgIcon";
+import SvgIcon from "components/Icons/SvgIcon";
+import { ClickShow } from "components/ShowUp";
 
 import "./Select.scss";
 
@@ -13,9 +11,7 @@ const SelectOption = ({ onChange, ...rest }) => {
 		<div
 			role="button"
 			className="SelectOption"
-			tabIndex={0}
 			onClick={handleSelect}
-			onKeyDown={handleSelect}
 		>
 			{rest.label}
 		</div>
@@ -25,6 +21,10 @@ const SelectOption = ({ onChange, ...rest }) => {
 SelectOption.propTypes = {
 	onChange: PropTypes.func.isRequired
 };
+
+const ShowOptions = ({ options, handleChange }) =>
+	//eslint-disable-next-line implicit-arrow-linebreak
+	options.map(option => <SelectOption key={option.id} {...option} onChange={handleChange} />);
 
 const Select = ({
 	children,
@@ -38,8 +38,6 @@ const Select = ({
 	disabled,
 	...restProps
 }) => {
-	const [isOpen, setIsOpen] = useState(false);
-
 	const handleChange = option => {
 		const { id } = option;
 		const e = {
@@ -52,50 +50,27 @@ const Select = ({
 		onChange(e, option.id, option);
 	};
 
-	const handleClose = () => {
-		document.removeEventListener("click", handleClose);
-		setIsOpen(false);
-	};
-
-	const handleOpen = () => {
-		document.addEventListener("click", handleClose);
-		setIsOpen(true);
-	};
-
-	//For open and hide options
-	const handleToggle = () => (isOpen ? handleClose() : handleOpen());
-
-	useEffect(() => () => document.removeEventListener("click", handleClose), []);
-
-	const findOption = option => option.id === value;
+	const findOption = option => option.label === value;
 	const selectedOption = options.find(findOption);
 	const compositeClassName = clsx("Select", size, {
 		[className]: className,
-		opened: isOpen,
 		invalid,
 		disabled
 	});
 
 	return (
-		<div className={compositeClassName} {...restProps}>
-			<div
-				role="button"
-				className="selected"
-				tabIndex={0}
-				onKeyDown={handleToggle}
-				onClick={handleToggle}
-			>
+		<ClickShow
+			className={compositeClassName}
+			onChange={handleChange}
+			Component={ShowOptions}
+			options={options}
+			{...restProps}
+		>
+			<div role="button" className="selected">
 				{selectedOption.label}
 				<SvgIcon icon="arrow-down" />
 			</div>
-			<div className="options">
-				<ScrollArea universal autoHeight autoHeightMin={0} autoHeightMax={200}>
-					{options.map(option => (
-						<SelectOption key={option.id} {...option} onChange={handleChange} />
-					))}
-				</ScrollArea>
-			</div>
-		</div>
+		</ClickShow>
 	);
 };
 
@@ -112,7 +87,7 @@ Select.propTypes = {
 	options: PropTypes.arrayOf(
 		PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.shape({})])
 	),
-	size: PropTypes.oneOf(["sm", "md", "lg"]),
+	size: PropTypes.oneOf(["sm", "md", "lg", "lg_m"]),
 	value: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.shape({})])
 };
 

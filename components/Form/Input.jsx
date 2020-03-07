@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import * as PropTypes from "prop-types";
 import clsx from "clsx";
 import { SvgIcon } from "components/Icons";
@@ -17,9 +18,17 @@ const Input = ({
 	iconRight,
 	iconLeft,
 	onChange,
+	onFocus,
 	...restProps
 }) => {
+	const inputRef = useRef(null);
 	const handleChange = e => onChange(e, e.target.value);
+	const handleBlur = () => onFocus(false);
+	const handleFocus = () => onFocus(true);
+
+	useEffect(() => {
+		inputRef.current.onfocus = () => handleFocus();
+	}, []);
 
 	const wrapperClassName = clsx("Input", size, {
 		[className]: className,
@@ -33,7 +42,14 @@ const Input = ({
 
 	return (
 		<div className={wrapperClassName}>
-			<input value={value} type={type} onChange={handleChange} {...restProps} />
+			<input
+				value={value}
+				type={type}
+				ref={inputRef}
+				onBlur={handleBlur}
+				onChange={handleChange}
+				{...restProps}
+			/>
 			{labelRight && <div className="label-right">{labelRight}</div>}
 			{iconRight && <SvgIcon icon={iconRight} />}
 		</div>
@@ -49,6 +65,7 @@ Input.propTypes = {
 	labelLeft: PropTypes.string,
 	labelRight: PropTypes.string,
 	onChange: PropTypes.func,
+	onFocus: PropTypes.func,
 	size: PropTypes.oneOf(["lg_m", "lg", "md", "sm"]),
 	type: PropTypes.string,
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])

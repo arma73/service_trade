@@ -1,0 +1,42 @@
+@import "../../theme/variables";
+@import "../../theme/media";
+
+.ShowInput {
+	position: relative;
+	width: max-content;
+
+	&_Element {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+		top: 80%;
+        transition: 0.2s ease all;
+		box-shadow: 0 6px 24px rgba(107, 108, 111, 0.16), 0 0 2px rgba(107, 108, 111, 0.24);
+	}
+
+	&.opened {
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -20px;
+			height: 20px;
+		}
+
+		.ShowInput_Element {
+			display: block;
+			position: absolute;
+			opacity: 1;
+			cursor: pointer;
+			z-index: 1;
+			top: 110%;
+            width: max-content;
+            color: black;
+
+			&_Component {
+				color: black;
+			}
+		}
+	}
+}

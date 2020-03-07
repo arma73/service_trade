@@ -1,0 +1,35 @@
+@import "../../theme/variables";
+@import "../../theme/media";
+
+.ClickShow {
+	position: relative;
+	width: max-content;
+
+	&_Element {
+        position: absolute;
+		opacity: 0;
+        top: 80%;
+        z-index: -1;
+        visibility: hidden;
+        width: max-content;
+        transition: 0.2s ease all;
+		box-shadow: 0 6px 24px rgba(107, 108, 111, 0.16), 0 0 2px rgba(107, 108, 111, 0.24);
+	}
+
+	&.opened {
+		.ClickShow_Element {
+			display: block;
+			position: absolute;
+            opacity: 1;
+            z-index: 1;
+			top: 110%;
+            width: max-content;
+            color: black;
+            visibility: visible;
+
+			&_Component {
+				color: black;
+			}
+		}
+	}
+}

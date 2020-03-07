@@ -12,6 +12,7 @@ function fetcher(url) {
 
 const Fetcher = (WrapperComponent, dataName) => () => {
 	const { data, error } = useSWR(`/api/${dataName}`, fetcher);
+	//eslint-disable-next-line no-console
 	if (error) console.error(error);
 
 	return <WrapperComponent content={data} />;
