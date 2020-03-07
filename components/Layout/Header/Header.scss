@@ -3,43 +3,89 @@
 @import "../../../theme/media";
 
 .Header {
+	@include media-breakpoint-down(sm) {
+		position: relative;
+		z-index: 1;
+		justify-content: center !important;
+		&.Header_access-public{
+			padding: 5px 16px !important;
+		}
+		.nav-wrap{
+			z-index: 9999;
+			width: auto !important;
+			position: fixed;
+			right: 3%;
+			.Button.mobile-toggle{
+				line-height: 0;
+			}
+		}
+	}
 	.Navigation {
 		display: flex;
 		align-items: center;
-		.navigation-item {
-			margin-left: 32px;
-		}
-
-		.Navigation_list{
+		.Navigation_list {
 			display: flex;
 			line-height: 40px;
 			transition: 0.3s ease all;
-			&.stripped{
+			&.stripped {
 				flex: 1;
-				flex-wrap: wrap;
-				justify-content: center;
+				justify-content: flex-end;
 				.navigation-item {
-
-					.Link{
-						line-height: 20px;
-						margin-left: 105px;
+					margin-left: 4vw;
+					.Link {
+						display: flex;
+						align-items: center;
+						justify-content: center;
 						color: $orange-100;
 						border: 1px solid $orange-100;
 						padding: 7px;
 						transition: 0.3s ease all;
 						border-radius: 5px;
-						&:hover{
+						width: 120px;
+						line-height: normal;
+						&:hover {
 							background-color: $orange-100;
 							color: $colorful_orange;
 							border-radius: 2px;
 						}
 					}
-					
+					@include media-breakpoint-down(md) {
+						margin-left: 2vw;
+						margin-right: 1vw;
+						width: 110px;
+					}
+				}
+			}
+			&.authorization_buttons {
+				.navigation-item {
+					margin-left: 32px;
+					.sign_btn {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: $orange-100;
+						border: 1px solid $orange-100;
+						background-color: $orange-400;
+						padding: 7px;
+						transition: 0.3s ease all;
+						border-radius: 5px;
+						width: 80px;
+						line-height: normal;
+						&:hover {
+							background-color: $orange-100;
+							color: $colorful_orange;
+							border-radius: 2px;
+						}
+					}
+				}
+				@include media-breakpoint-down(md) {
+					.navigation-item {
+						margin-left: 12px;
+					}
 				}
 			}
 		}
-		
-		/*
+
 		@include media-breakpoint-down(sm) {
 			opacity: 0;
 			visibility: hidden;
@@ -63,12 +109,7 @@
 				top: 0;
 			}
 		}
-		*/
-		.Button {
-			padding: 11px 14px;
-		}
 	}
-
 	a {
 		font-weight: 500;
 
@@ -103,6 +144,11 @@
 				opacity: 1;
 				visibility: visible;
 				right: 0;
+				opacity: 1;
+				visibility: visible;
+				right: 0;
+				display: flex;
+				flex-direction: column;
 			}
 
 			.mobile-toggle {
@@ -129,7 +175,7 @@
 
 		.nav-wrap {
 			padding-left: 25px;
-			/*
+
 			@include media-breakpoint-down(sm) {
 				display: flex;
 				justify-content: flex-end;
@@ -148,7 +194,6 @@
 					}
 				}
 			}
-			*/
 		}
 
 		.mobile-toggle {
@@ -160,20 +205,19 @@
 				color: $orange-400;
 			}
 		}
-		/*
 		@include media-breakpoint-down(sm) {
 			.Navigation {
 				display: flex;
 				flex-direction: column;
 			}
 		}
-		*/
 	}
 
 	&_access-public {
 		padding: 17px 16px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		color: #ffffff;
 		background-color: $colorful_orange;
 
@@ -181,15 +225,30 @@
 			fill: #ffffff;
 		}
 
-		// @include media-breakpoint-down(sm) {
-		// 	.Navigation {
-		// 		display: block;
-		// 	}
-		// }
+		@include media-breakpoint-down(sm) {
+			.Navigation {
+				.stripped{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					align-items: center;
+					justify-content: flex-start !important;
+					margin-top: 20px;
+					.navigation-item{
+						margin-bottom: 13px;
+						margin-left: 0 !important;
+						margin-right: 0 !important;
+						width: max-content !important;
+						.Link{
+							width: 150px !important;
+						}
+					}
+				}
+			}
+		}
 	}
-
 }
-.Concept{
+.Concept {
 	&_access-public {
 		border-top: 3px solid $colorful_purple_dark;
 		padding: 13px 16px;
@@ -201,12 +260,10 @@
 		.mobile-toggle {
 			fill: #ffffff;
 		}
-		/*
 		@include media-breakpoint-down(sm) {
 			.Navigation {
 				display: block;
 			}
 		}
-		*/
 	}
 }

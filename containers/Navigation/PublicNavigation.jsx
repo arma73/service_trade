@@ -2,7 +2,6 @@ import { bool, func } from "prop-types";
 import clsx from "clsx";
 import { NavigationItem, NavigationList, NavigationGroup } from "components/Navigation";
 import SiteNavigation from "components/Layout/Header/SiteNavigation";
-import { Button } from "components/Form";
 import withViewportDetection from "containers/Hocs/WithViewportDetection";
 import withToggle from "containers/Hocs/WithToggle";
 
@@ -29,15 +28,11 @@ const PublicNavigationContainer = ({ handleToggleClick, isMobile, isOpen }) => {
 					<NavigationItem href="/activity">Activity</NavigationItem>
 				</NavigationList>
 				<NavigationList classpropname={`${listClassName} authorization_buttons`}>
-					<NavigationItem href="/sign-in">
-						<Button color="white" size="sm">
-							Login
-						</Button>
+					<NavigationItem href="/sign-in" classpropname="sign_btn">
+						Login
 					</NavigationItem>
-					<NavigationItem href="/sign-up">
-						<Button color="white" size="sm">
-							Sign Up
-						</Button>
+					<NavigationItem href="/sign-up" classpropname="sign_btn">
+						Sign Up
 					</NavigationItem>
 				</NavigationList>
 			</NavigationGroup>
