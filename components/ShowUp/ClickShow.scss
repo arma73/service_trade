@@ -9,7 +9,7 @@
         position: absolute;
 		opacity: 0;
         top: 80%;
-        z-index: -1;
+        z-index: $hide_level_index;
         visibility: hidden;
         width: max-content;
         transition: 0.2s ease all;
@@ -21,7 +21,7 @@
 			display: block;
 			position: absolute;
             opacity: 1;
-            z-index: 1;
+            z-index: $low_level_index;
 			top: 110%;
             width: max-content;
             color: black;

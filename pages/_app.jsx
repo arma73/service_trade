@@ -14,6 +14,19 @@ import "utils/route-watcher";
 import "./styles.scss";
 
 class MyApp extends App {
+	static async getInitialProps({ Component, ctx }) {
+		let pageProps = {};
+		if (ctx.isServer) {
+			const { sizesFallback } = ctx.req;
+			pageProps.sizesFallback = sizesFallback;
+		}
+		if (Component.getInitialProps) {
+			const componentProps = await Component.getInitialProps(ctx);
+			pageProps = { ...pageProps, ...componentProps };
+		}
+		return { pageProps };
+	}
+
 	componentDidMount() {
 		//Remove the server-side injected CSS.
 		const jssStyles = document.querySelector("#jss-server-side");
@@ -21,20 +34,6 @@ class MyApp extends App {
 			jssStyles.parentElement.removeChild(jssStyles);
 		}
 	}
-	/*
-	 * static async getInitialProps({ Component, ctx }) {
-	 * let pageProps = {};
-	 * if (ctx.isServer) {
-	 * const { sizesFallback } = ctx.req;
-	 * pageProps.sizesFallback = sizesFallback;
-	 * }
-	 * if (Component.getInitialProps) {
-	 * const componentProps = await Component.getInitialProps(ctx);
-	 * pageProps = { ...pageProps, ...componentProps };
-	 * }
-	 * return { pageProps };
-	 * }
-	 */
 
 	createUrl = router => {
 		const { pathname, asPath, query } = router;

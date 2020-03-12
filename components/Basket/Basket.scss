@@ -6,7 +6,7 @@
     justify-content: center;
     cursor: pointer;
     position: relative;
-	z-index: 1;
+	z-index: $low_level_index;
     width: max-content;
     height: 100%;
     .SvgIcon{
@@ -20,7 +20,9 @@
         background-color: $orange-400 !important;
         border: 2px solid $orange-400 !important;
     }
-    
+    &::after{
+        z-index: $middle_level_index;
+    } 
 }
 .HoverShow_Element{
     right: 5% !important;

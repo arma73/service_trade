@@ -29,7 +29,6 @@ const Basket = () => (
 						font-family: serif;
 						text-align: center;
 						box-sizing: content-box;
-						z-index: 12;
 					}
 				`}
 			</style>

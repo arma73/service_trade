@@ -1,9 +1,8 @@
 import { FormGroup, SelectCategories } from "components/Form";
-import CategoriesMocks from "mocks/CategoriesMocks";
 
 import "./Category.scss";
 
-const Category = () => {
+const Category = ({ CategoriesMocks }) => {
 	const { lists } = CategoriesMocks();
 
 	const handleFormChange = e => console.log(e);

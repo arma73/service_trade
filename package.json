@@ -14,9 +14,9 @@
     "next"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server",
     "build": "next build",
-    "export": "next export",
+    "export": "next export && yarn serve ./out",
     "start": "cross-env NODE_ENV=production node server",
     "precommit": "lint-staged",
     "lint": "eslint --debug **/*.{js,jsx}",
@@ -32,7 +32,7 @@
     "imagemin-optipng": "^7.1.0",
     "lodash": "^4.17.15",
     "mobile-detect": "^1.4.4",
-    "next": "9.2.0",
+    "next": "9.0.0",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^4.0.1",
     "next-routes": "^1.4.2",
@@ -80,8 +80,10 @@
     "next-optimized-images": "^2.5.4",
     "node-http-proxy-json": "^0.1.9",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
+    "serve": "^11.3.0",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "browserslist": {

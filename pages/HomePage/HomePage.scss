@@ -1,7 +1,9 @@
+@import "../../theme/variables.scss";
+
 .Homepage {
 	.Header {
 		position: relative;
-		z-index: 1;
+		z-index: $low_level_index;
 	}
 
 	.Footer {

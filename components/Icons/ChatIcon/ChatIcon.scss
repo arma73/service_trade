@@ -9,7 +9,7 @@
   height: 60px;
   border-radius: 50%;
   background-color: $orange-400;
-  z-index: 999;
+  z-index: $tallest_level_index;
 
   a {
     background: url("smile-icon.svg") no-repeat center center;

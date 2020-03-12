@@ -1,6 +1,6 @@
 import React from "react";
 import withSizes from "react-sizes";
-import VIEWPORTS from "../../utils/constants/viewports";
+import VIEWPORTS from "utils/constants/viewports";
 import getDisplayName from "utils/getDisplayName";
 
 const mapSizes = ({ width }) => ({

@@ -30,3 +30,12 @@ $section_orange:#ff8d00;
 //Concepts Header
 $height_padding_size: 10px;
 $width_main_input: 50vw;
+
+//z-index
+$hide_level_index: -1;
+$zero_level_index: 0;
+$low_level_index: 100;
+$middle_level_index: 200;
+$high_level_index: 500;
+$tallest_level_index: 999;
+$always_tallest_level_index: 9999;

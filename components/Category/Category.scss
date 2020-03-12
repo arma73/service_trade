@@ -35,7 +35,7 @@
 		background: #fff;
 		transition: transform 0.22s ease-in;
 		border: 2px solid $section_orange;
-		z-index: 11;
+		z-index: $middle_level_index;
 
 		&.close {
 			transform: translateX(-300px);
