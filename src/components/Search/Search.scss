@@ -1,0 +1,25 @@
+@import "../../theme/media.scss";
+
+.Concepts_search_select{
+    min-width: 90px;
+    justify-content: center;
+    .ScrollArea{
+        .SelectOption{
+            font-size: 12px;
+            padding: 7px 10px;
+        }
+    }    
+    @include media-breakpoint-down(xl) {
+        min-width: 50px;
+        .selected{
+            min-width: auto !important;
+            
+        }
+        .selected_label{
+            display: none
+        }
+    }
+}
+.Concepts_search_input{
+    height: 100%;
+}

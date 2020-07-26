@@ -1,0 +1,47 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/_app.jsx": 0,
+      "multi private-next-pages/_document.jsx": 1,
+      "multi private-next-pages/index.jsx": 2,
+      "multi private-next-pages/HomePage/HomePage.jsx": 3,
+      "multi private-next-pages/HomePage/index.js": 4,
+      "multi private-next-pages/api/category.js": 5,
+      "multi private-next-pages/api/checkAccessName.js": 6,
+      "multi next/dist/pages/_error": 7
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/HomePage.js": 0,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/HomePage/HomePage.js": 1,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/_app.js": 2,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/_document.js": 3,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/_error.js": 4,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/api/category.js": 5,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/api/checkAccessName.js": 6,
+      "static/jB1nYBjsbyZnhiX6uMr5s/pages/index.js": 7
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  }
+}
