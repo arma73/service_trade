@@ -16,7 +16,8 @@ package-lock.json
 # misc
 ## .env**
 .DS_Store
-
+.env
+.env.production
 
 # debug
 npm-debug.log*
