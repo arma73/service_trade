@@ -1,0 +1,20 @@
+.Error404 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 25px;
+	text-align: center;
+	.backLinkError {
+		color: #3ea6f6;
+		font-size: 20px;
+		width: max-content;
+		margin-top: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

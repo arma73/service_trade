@@ -1,27 +1,11 @@
 import ReactDOM from "react-dom";
-/*
- * import { Provider } from "react-redux";
- * import { BrowserRouter, Route } from "react-router-dom";
- * import { createStore, applyMiddleware } from "redux";
- * import ReduxThunk from "redux-thunk";
- * import { composeWithDevTools } from "redux-devtools-extension";
- */
+import { BrowserRouter, Route } from "react-router-dom";
+import Routes from "./routes";
 
-/*
- * import reducers from "store/reducers";
- * import Routes from "./routes";
- */
+const App = () => (
+	<BrowserRouter>
+		<Route path="/" component={Routes} />
+	</BrowserRouter>
+);
 
-// const store = createStore(reducers, composeWithDevTools(applyMiddleware(ReduxThunk)));
-
-/*
- * const App = () => (
- * 	<Provider store={store}>
- * 		<BrowserRouter>
- * 			<Route path="/" component={Routes} />
- * 		</BrowserRouter>
- * 	</Provider>
- * );
- */
-
-ReactDOM.render(() => <div>22</div>, document.querySelector("#app"));
+ReactDOM.render(<App />, document.querySelector("#app"));

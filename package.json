@@ -19,7 +19,7 @@
   "scripts": {
     "build-dev": "webpack -d --mode development cross-env NODE_ENV=development",
     "build-prod": "webpack -p --mode production --env production",
-    "start": "webpack-dev-server -r dotenv/config --mode development cross-env NODE_ENV=development --open",
+    "dev": "webpack-dev-server -r dotenv/config --mode development --open",
     "lint": "eslint src/**/*.{js,jsx} --quiet",
     "lint:fix": "yarn lint --fix",
     "precommit": "lint-staged"
